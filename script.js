@@ -5,6 +5,14 @@
     const cw3 = document.getElementById('cw3');
     const answer = document.getElementById('answer');
 
+    function LoadingPopup() {
+      const loadingDiv = document.createElement("div");
+      loadingDiv.className = "popup";
+      loadingDiv.textContent = "Loading…";
+      document.body.appendChild(loadingDiv);
+      return loadingDiv;
+    }
+
     example.addEventListener("click", function () {
       fetch('https://jsonplaceholder.typicode.com/posts')
         .then(response => response.json())
@@ -15,7 +23,7 @@
     });
 
     cw1.addEventListener("click", function () {
-      answer.innerHTML = "<p><em>Loading...</em></p>";
+      const loading = LoadingPopup();
 
       fetch('https://jsonplaceholder.typicode.com/posts')
         .then(response => response.json())
@@ -27,6 +35,7 @@
             });
             html += "</ul>";
             answer.innerHTML = html;
+            loading.remove();
           }, 1000);
         })
         .catch(error => {
