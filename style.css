@@ -1,0 +1,14 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+ul {
+  list-style-type: none;
+}
+li {
+  list-style-type: none;
+  padding: 5px 5px;
+  margin: 5px 5px;
+  border: 5px solid black;
+}
