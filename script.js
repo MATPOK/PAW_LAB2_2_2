@@ -48,6 +48,9 @@
           return response.json();
         })
         .then(post => {
+          console.log(post);
+          console.log(post.title);
+          console.log(post.body);
           let html = `<li><strong>${post.title}</strong><br>${post.body}</li>`;
           answer.innerHTML = html;
         })
